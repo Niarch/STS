@@ -5,7 +5,7 @@ var express = require('express'),
 
 	mongoose = require('mongoose'),
 
-	stsData = require('./restapi/models/stsDataModel')
+	inputData = require('./restapi/models/inputDataModel')
 
 	bodyParser = require('body-parser');
 
