@@ -5,17 +5,18 @@ var express = require('express'),
 
 	mongoose = require('mongoose'),
 
-	inputData = require('./restapi/models/inputDataModel')
+	description = require('./restapi/models/descriptionModel'),
 
 	bodyParser = require('body-parser');
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/STS', {useMongoClient : true });
+mongoose.connect('mongodb://localhost:27017/STS').then(() =>  console.log('connection succesful'))
+  .catch((err) => console.error(err));
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-var routes = require('./restapi/routes/dataroutes');
+var routes = require('./restapi/routes/description_routes');
 routes(app);
 
 app.use ((req,res) => {

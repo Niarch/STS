@@ -15,4 +15,4 @@ var inputSchema = new Schema({
 	Nature : {type: Number, Required: 'need default rating'},
 });
 
-module.exports = mongoose.model('inputData', inputSchema)
+module.exports = mongoose.model('UserInput', inputSchema);
